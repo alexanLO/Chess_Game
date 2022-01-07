@@ -1,18 +1,17 @@
-## Getting Started
+# Informações
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+    Este é o projeto final do primeiro modulo do curso JAVA completo Programação Orientada a Objeto do Prof. Dr. Nelio Alves - Udemy
 
-## Folder Structure
+    Assuntos testado:
+        -Estrutura Sequencial
+        -Estrutura Condicional
+        -Estrutura Repetitivas
+        -Programação Orientada a Objeto
+        -Contrutores,Palavra this e sobrecarga
+        -Comportamento de memória, arrays, listas
+        -Nivelando Git e Github
+        -Enumerações e composições
+        -Herança e polimorfismo
+        -Tratamento de exceções
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+        PDF' com o checklist do passo a passo: 
