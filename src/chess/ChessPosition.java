@@ -9,6 +9,7 @@ public class ChessPosition {
     public ChessPosition(int row, char column){
         this.row = row;
         this.column = column;
+        this.row = row;
     }
 
     protected Position toPosition(){
