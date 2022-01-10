@@ -31,5 +31,5 @@ public abstract class Piece {
         }
         return false;
     }
-
+    
 }
