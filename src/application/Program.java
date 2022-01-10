@@ -8,7 +8,7 @@ import chess.ChessPosition;
 import chess.exception.ChessException;
 
 public class Program {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         ChessMatch chessMatch = new ChessMatch();
@@ -26,6 +26,7 @@ public class Program {
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+
             } catch (ChessException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
