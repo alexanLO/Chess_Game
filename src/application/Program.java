@@ -1,6 +1,5 @@
 package application;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import chess.ChessMatch;
@@ -29,8 +28,8 @@ public class Program {
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
             } catch (ChessException e) {
                 System.out.println(e.getMessage());
-                sc.nextLine();               
-            } catch(Exception e){
+                sc.nextLine();
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.out.flush();
             }
