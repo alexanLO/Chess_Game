@@ -1,18 +1,18 @@
-package chess.chesspieces;
+package chess.pieces;
 
 import boardgame.Board;
 import chess.ChessPiece;
 import chess.enums.Color;
 
-public class King extends ChessPiece {
+public class Queen extends ChessPiece {
 
-    public King(Board board, Color color) {
+    public Queen(Board board, Color color) {
         super(board, color);
     }
 
     @Override
     public String toString() {
-        return "R";
+        return "Q";
     }
 
     @Override

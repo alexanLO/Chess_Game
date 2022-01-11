@@ -3,14 +3,14 @@ package chess;
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
-import chess.chesspieces.Bishop;
-import chess.chesspieces.King;
-import chess.chesspieces.Knight;
-import chess.chesspieces.Pawn;
-import chess.chesspieces.Queen;
-import chess.chesspieces.Rook;
 import chess.enums.Color;
 import chess.exception.ChessException;
+import chess.pieces.Bishop;
+import chess.pieces.King;
+import chess.pieces.Knight;
+import chess.pieces.Pawn;
+import chess.pieces.Queen;
+import chess.pieces.Rook;
 
 public class ChessMatch {
 
@@ -58,8 +58,8 @@ public class ChessMatch {
         if (!board.thereIsAPiece(position)) {
             throw new ChessException("Não existe peça na posição de origem.");
         }
-        if (board.piece(position).isThereAnyPossibleMove()) {
-            throw new ChessException("Não existe movimentos possiveis para a peça escolhhida");
+        if (!board.piece(position).isThereAnyPossibleMove()) {
+            throw new ChessException("Não existe movimentos possiveis para a peça escolhida");
         }
     }
 
@@ -98,14 +98,14 @@ public class ChessMatch {
         placeNewPiece('e', 8, new King(board, Color.WHITE));
 
         // PEÃO
-        placeNewPiece('a', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('b', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('c', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('d', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('e', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('f', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('g', 2, new Pawn(board, Color.BLACK));
-        placeNewPiece('h', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('a', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('b', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('c', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('d', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('e', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('f', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('g', 2, new Pawn(board, Color.BLACK));
+        // placeNewPiece('h', 2, new Pawn(board, Color.BLACK));
         // TORRE
         placeNewPiece('a', 1, new Rook(board, Color.BLACK));
         placeNewPiece('h', 1, new Rook(board, Color.BLACK));
