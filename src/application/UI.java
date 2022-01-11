@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 
+import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.enums.Color;
@@ -44,6 +45,13 @@ public class UI {
         } catch (RuntimeException e) {
             throw new Exception("Erro lendo a posição de xadrez, valores validos de a1 até h8.");
         }
+    }
+
+    public static void printMatch(ChessMatch chessMatch){
+        printBoard(chessMatch.getPieces());
+        System.out.println();
+        System.out.println("Turno: " + chessMatch.getTurn());
+        System.out.println("Esperando o jogador " + chessMatch.getCurrentPlayer() + " Jogar");
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
