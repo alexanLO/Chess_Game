@@ -14,4 +14,4 @@
         -Herança e polimorfismo
         -Tratamento de exceções
 
-        PDF' com o checklist do passo a passo: 
+        PDF' com o checklist do passo a passo: https://drive.google.com/file/d/1nqD7L1JabKx54PyYRvoKvyBoSiAESpKM/view?usp=sharing
