@@ -6,11 +6,13 @@ public class Position {
     private int row;
     private int column;
 
+    // contruct
     public Position(int row, int column) {
         this.setRow(row);
         this.setColumn(column);
     }
 
+    // gets e sets
     public int getColumn() {
         return column;
     }

@@ -6,14 +6,17 @@ public abstract class Piece {
 
     private Board board;
 
+    // construct
     public Piece(Board board) {
         this.board = board;
     }
 
+    // gets
     protected Board getBoard() {
         return board;
     }
 
+    // methods
     public abstract boolean[][] possibleMoves();
 
     public boolean possibleMove(Position position) {

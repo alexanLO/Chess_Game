@@ -9,6 +9,7 @@ public class Board {
 
     private Piece[][] pieces;
 
+    // construct
     public Board(int rows, int columns) {
         if (rows <= 0 || columns <= 0) {
             throw new BoardException("Error criando tabuleiro: Deve ter pelo menos uma linha e uma coluna.");
@@ -18,6 +19,7 @@ public class Board {
         pieces = new Piece[rows][columns];
     }
 
+    // gets
     public int getColumns() {
         return columns;
     }
@@ -26,6 +28,7 @@ public class Board {
         return rows;
     }
 
+    // methods
     public Piece piece(int row, int column) {
         if (!positionExists(row, column)) {
             throw new BoardException("Error: Posição não existe.");

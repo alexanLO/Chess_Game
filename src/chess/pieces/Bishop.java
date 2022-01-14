@@ -7,6 +7,7 @@ import chess.enums.Color;
 
 public class Bishop extends ChessPiece {
 
+    // construct
     public Bishop(Board board, Color color) {
         super(board, color);
     }
@@ -22,7 +23,9 @@ public class Bishop extends ChessPiece {
 
         Position p = new Position(0, 0);
 
-        // diagonal left top
+        // LEFT DIAGONALS
+
+        // top
         p.setValues(position.getRow() - 1, position.getColumn() - 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
@@ -32,7 +35,18 @@ public class Bishop extends ChessPiece {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // diagonal right top
+        // bottom
+        p.setValues(position.getRow() + 1, position.getColumn() - 1);
+        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setValues(p.getRow() + 1, p.getColumn() - 1);
+        }
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            mat[p.getRow()][p.getColumn()] = true;
+        }
+        // RIGHT DIAGONALS
+
+        // top
         p.setValues(position.getRow() - 1, position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
@@ -42,21 +56,11 @@ public class Bishop extends ChessPiece {
             mat[p.getRow()][p.getColumn()] = true;
         }
 
-        // diagonal right bottom
+        // bottom
         p.setValues(position.getRow() + 1, position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
             p.setValues(p.getRow() + 1, p.getColumn() + 1);
-        }
-        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
-            mat[p.getRow()][p.getColumn()] = true;
-        }
-
-        // diagonal left bottom
-        p.setValues(position.getRow() + 1, position.getColumn() - 1);
-        while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
-            mat[p.getRow()][p.getColumn()] = true;
-            p.setValues(p.getRow()  + 1, p.getColumn() - 1);
         }
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;

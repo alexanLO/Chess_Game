@@ -7,33 +7,35 @@ import chess.enums.Color;
 
 public class King extends ChessPiece {
 
-    public King(Board board, Color color) {
-        super(board, color);
-    }
+	// construct
+	public King(Board board, Color color) {
+		super(board, color);
+	}
 
-    @Override
-    public String toString() {
-        return "R";
-    }
+	@Override
+	public String toString() {
+		return "R";
+	}
 
-    private boolean canMove(Position position) {
-		ChessPiece p = (ChessPiece)getBoard().piece(position);
+	// methods
+	private boolean canMove(Position position) {
+		ChessPiece p = (ChessPiece) getBoard().piece(position);
 		return p == null || p.getColor() != getColor();
 	}
 
-    @Override
-    public boolean[][] possibleMoves() {
+	@Override
+	public boolean[][] possibleMoves() {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		
+
 		Position p = new Position(0, 0);
-		
-		// above
+
+		// top
 		p.setValues(position.getRow() - 1, position.getColumn());
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// below
+		// bottom
 		p.setValues(position.getRow() + 1, position.getColumn());
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
@@ -51,30 +53,36 @@ public class King extends ChessPiece {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// diagonal left top
+		// DIAGONALS
+
+		// Left
+
+		// top
 		p.setValues(position.getRow() - 1, position.getColumn() - 1);
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// diagonal right top
+		// bottom
+		p.setValues(position.getRow() + 1, position.getColumn() - 1);
+		if (getBoard().positionExists(p) && canMove(p)) {
+			mat[p.getRow()][p.getColumn()] = true;
+		}
+
+		// Right
+
+		// top
 		p.setValues(position.getRow() - 1, position.getColumn() + 1);
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// diagonal left bottom
-		p.setValues(position.getRow() + 1, position.getColumn() - 1);
-		if (getBoard().positionExists(p) && canMove(p)) {
-			mat[p.getRow()][p.getColumn()] = true;
-		}
-		
-		// diagonal right bottom
+		// bottom
 		p.setValues(position.getRow() + 1, position.getColumn() + 1);
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-        
-        return mat;
-    }
+
+		return mat;
+	}
 }

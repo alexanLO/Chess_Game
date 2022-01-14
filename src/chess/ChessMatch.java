@@ -154,16 +154,17 @@ public class ChessMatch<retrun> {
     }
 
     private boolean testCheck(Color color) {
-		Position kingPosition = king(color).getChessPosition().toPosition();
-		List<Piece> opponentPieces = piecesOnTheBoard.stream().filter(x -> ((ChessPiece)x).getColor() == opponent(color)).collect(Collectors.toList());
-		for (Piece p : opponentPieces) {
-			boolean[][] mat = p.possibleMoves();
-			if (mat[kingPosition.getRow()][kingPosition.getColumn()]) {
-				return true;
-			}
-		}
-		return false;
-	}
+        Position kingPosition = king(color).getChessPosition().toPosition();
+        List<Piece> opponentPieces = piecesOnTheBoard.stream()
+                .filter(x -> ((ChessPiece) x).getColor() == opponent(color)).collect(Collectors.toList());
+        for (Piece p : opponentPieces) {
+            boolean[][] mat = p.possibleMoves();
+            if (mat[kingPosition.getRow()][kingPosition.getColumn()]) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private boolean testCheckMate(Color color) {
         if (!testCheck(color)) {
@@ -199,9 +200,7 @@ public class ChessMatch<retrun> {
 
     private void initialSetup() {
 
-        placeNewPiece('d', 5, new Queen(board, Color.WHITE));
-
-/*         // // PEÃO
+        // PEÃO
         placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('c', 2, new Pawn(board, Color.WHITE));
@@ -210,21 +209,21 @@ public class ChessMatch<retrun> {
         placeNewPiece('f', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
-        // // TORRE
+        // TORRE
         placeNewPiece('a', 1, new Rook(board, Color.WHITE));
         placeNewPiece('h', 1, new Rook(board, Color.WHITE));
-        // // CAVALO
+        // CAVALO
         placeNewPiece('b', 1, new Knight(board, Color.WHITE));
         placeNewPiece('g', 1, new Knight(board, Color.WHITE));
-        // // Bispo
+        // Bispo
         placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
         placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
-        // // Rainha
+        // Rainha
         placeNewPiece('e', 1, new Queen(board, Color.WHITE));
-        // // REI
+        // REI
         placeNewPiece('d', 1, new King(board, Color.WHITE));
 
-        // // PEÃO
+        // PEÃO
         placeNewPiece('a', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('b', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('c', 7, new Pawn(board, Color.BLACK));
@@ -233,19 +232,19 @@ public class ChessMatch<retrun> {
         placeNewPiece('f', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
         placeNewPiece('h', 7, new Pawn(board, Color.BLACK));
-        // // TORRE
+        // TORRE
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
-        // // CAVALO
+        // CAVALO
         placeNewPiece('b', 8, new Knight(board, Color.BLACK));
         placeNewPiece('g', 8, new Knight(board, Color.BLACK));
-        // // Bispo
+        // Bispo
         placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
-        // // Rainha
+        // Rainha
         placeNewPiece('e', 8, new Queen(board, Color.BLACK));
-        // // REI
+        // REI
         placeNewPiece('d', 8, new King(board, Color.BLACK));
- */
+
     }
 }
