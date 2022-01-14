@@ -199,7 +199,7 @@ public class ChessMatch<retrun> {
 
     private void initialSetup() {
 
-        placeNewPiece('d', 5, new Knight(board, Color.WHITE));
+        placeNewPiece('d', 5, new Queen(board, Color.WHITE));
 
 /*         // // PEÃO
         placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
