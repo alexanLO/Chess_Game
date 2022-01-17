@@ -17,7 +17,7 @@ import chess.pieces.Pawn;
 import chess.pieces.Queen;
 import chess.pieces.Rook;
 
-public class ChessMatch<retrun> {
+public class ChessMatch {
 
     private int turn;
     private Color currentPlayer;

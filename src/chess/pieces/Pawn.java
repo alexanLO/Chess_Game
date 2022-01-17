@@ -43,13 +43,15 @@ public class Pawn extends ChessPiece {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            // left diagonal
+            //DIAGONAL
+
+            // left
             p.setValues(position.getRow() - 1, position.getColumn() - 1);
             if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            // right diagonal
+            // right
             p.setValues(position.getRow() - 1, position.getColumn() + 1);
             if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
                 mat[p.getRow()][p.getColumn()] = true;
@@ -70,7 +72,7 @@ public class Pawn extends ChessPiece {
                 }
 
             }
-        } else {
+        } else{
 
             // top 1 casa
             p.setValues(position.getRow() + 1, position.getColumn());
@@ -86,16 +88,18 @@ public class Pawn extends ChessPiece {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            // right diagonal
+            //DIAGONAL 
+           
+            // right
             p.setValues(position.getRow() + 1, position.getColumn() + 1);
             if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
                 mat[p.getRow()][p.getColumn()] = true;
             }
 
-            // left diagonal
+            // left
             p.setValues(position.getRow() + 1, position.getColumn() - 1);
             if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
-
+                mat[p.getRow()][p.getColumn()] = true;
             }
 
             // #especialmove en passant black
